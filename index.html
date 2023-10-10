@@ -5,10 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="application-name" content="AI Character Editor">
 	<meta name="description" content="Create, edit and convert AI character files for CharacterAI, Pygmalion, Text Generation and TavernAI">
-	<meta name="version" content="0.5.0">
+	<meta name="version" content="0.5.1">
 	<meta name="revision" content="2023-02-06">
-	<meta name="author" content="ZoltanAI">
-	<meta name="contact" content="Zoltan#8287 on Discord">
+	<meta name="author" content="ZoltanAI, AVAKSon">
+	<meta name="contact" content="Zoltan#8287 and AVAKSon#0498 on Discord">
 	<meta name="license" content="GNU-GPLv3">
 	<meta name="color-scheme" content="light dark" />
 	<meta name="theme-color" media="(prefers-color-scheme: light)" content="#F8F9FA" />
@@ -16,7 +16,7 @@
 	<meta name="twitter:card" content="summary">
 	<meta property="og:title" content="AI Character Editor">
 	<meta property="og:description" content="Create, edit and convert AI character files for CharacterAI, Pygmalion, Text Generation and TavernAI">
-	<meta property="og:url" content="https://zoltanai.github.io/character-editor/">
+	<meta property="og:url" content="https://avakson.github.io/character-editor/">
 	<meta property="og:type" content="website">
 	<title>AI Character Editor</title>
 	<script>
@@ -36,9 +36,51 @@
 			});
 		})();
 	</script>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10/font/bootstrap-icons.min.css">
 	<style>
+
+/* <div class="row my-3"> 
+
+		 .image {
+		    position: fixed;
+		    width: 200px;
+		    height: 100px;
+		  }
+
+		 .edit-original.name {
+		    position: fixed;
+		 }*/
+
+		.carousel-indicators {
+		    margin-bottom: -10px;
+		}
+
+		.carousel-dark .carousel-indicators [data-bs-target] {
+		    background-color: #7f7f7f
+		}
+
+		.carousel-control-prev {
+		    width: 15px;
+		}
+
+		.carousel-control-next {
+		    width: 15px;
+		}
+
+		.carousel-control-prev-icon {
+		    position: absolute;
+		    bottom: 35px;
+		    left: -29px;
+		}
+
+		.carousel-control-next-icon {
+		    position: absolute;
+		    bottom: 35px;
+		    right: -29px;
+		}
+
 		.accordion-button:disabled {
 			cursor: not-allowed;
 		}
@@ -100,9 +142,29 @@
 <body class="d-flex flex-column h-100 bg-body-tertiary">
 	<main class="flex-shrink-0">
 		<div class="container pt-4 pb-5">
-			<h1 class="display-1 text-center">AI Character Editor</h1>
-			<p class="my-0 lead text-center">Create, edit and convert to and from <a href="https://beta.character.ai/" target="_blank">CharacterAI</a> <a href="https://github.com/0x000011b/characterai-dumper" target="_blank">dumps</a>, <a href="https://github.com/PygmalionAI/gradio-ui" target="_blank">Pygmalion</a>, <a href="https://github.com/oobabooga/text-generation-webui" target="_blank">Text Generation</a> and <a href="https://github.com/TavernAI/TavernAI" target="_blank">TavernAI</a> formats easily</p>
-			<p class="lead text-center">Supports both JSON and Character Card image files</p>
+
+<!--<div class="toast-container position-fixed bottom-0 start-0">
+<div class="toast" role="alert" id="toast" aria-live="assertive" aria-atomic="true">
+  <div class="toast-header">
+    <img src="..." class="rounded me-2" alt="...">
+    <strong class="me-auto">Tooltip</strong>
+    <small>11 mins ago</small>
+    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+  <div class="toast-body">
+	<li>Use <b>{{char}}</b> variable for character's identification and <b>{{user}}</b> for user's, obviously;</li>
+	<li>Also use asterisks ( <b>*</b> ) to indicate inner thoughts and quotation marks (<b>" "</b>) for direct speech;</li>
+	<li>Editors supports <b>XML-markup</b> and block structure of writing using a scheme <b>[&#60;tag&#62;</b>TEXT<b>&#60;/tag&#62;]</b></li>
+  </div>
+</div>
+</div>-->
+
+			<h1 class="display-1 text-center"><b>AIChar</b>ED</h1>
+			<!--<p class="my-0 lead text-center">Create, edit and convert to and from <a href="https://beta.character.ai/" target="_blank">CharacterAI</a> <a href="https://github.com/irsat000/CAI-Tools" target="_blank">dumps</a>, <a href="https://github.com/PygmalionAI/gradio-ui" target="_blank">Pygmalion</a>, <a href="https://github.com/oobabooga/text-generation-webui" target="_blank">Text Generation</a> and <a href="https://github.com/Cohee1207/SillyTavern" target="_blank">TavernAI</a> formats easily</p>
+			<p class="lead text-center">Supports both JSON and Character Card image files</p>-->
+
+			<p class="display-5 lead text-center">Create and edit <b>your waifu</b> for a <b>nice coom</b> in <a href="http://127.0.0.1:8000/" target="_blank">Silly Tavern</a>!</p>
+			<p class="my-0 lead text-center">Also you can use a <a href="https://zoltanai.github.io/character-editor/" target="_blank">classic version</a> for testing purposes, that was originally created by <b>Zoltan#8287</b>, or a <a href="https://avakson.github.io/character-editor/" target="_blank">modified one</a>, that was forked by <b>AVAKSon#0498</b></p>
 
 			<button id="theme" class="btn btn-outline-secondary position-absolute top-0 end-0 m-4">
 				<i class="bi bi-lightbulb"></i>
@@ -128,7 +190,7 @@
 							<div class="accordion-body text-center p-0">
 								<div class="container">
 									<div class="row">
-										<div class="col-6 py-5 position-relative">
+										<div class="col-4 py-5 position-relative">
 											<form id="load-form">
 												<i class="bi bi-cloud-upload display-2 text-primary"></i>
 
@@ -139,12 +201,20 @@
 											</form>
 										</div>
 
-										<div class="col-6 py-5 position-relative border-start">
+										<div class="col-4 py-5 position-relative border-start">
 											<i class="bi bi-file-earmark-plus display-2 text-primary"></i>
 
 											<p class="my-2">Start from scratch and create a new character<br><br></p>
 
 											<button id="create" type="button" class="btn btn-primary stretched-link">New character</button>
+										</div>
+
+										<div class="col-4 py-5 position-relative border-start">
+											<i class="bi bi-save display-2 text-primary"></i>
+
+											<p class="my-2">Restore the last character you worked on<br><br></p>
+
+											<button id="restore" type="button" class="btn btn-primary stretched-link">Restore</button>
 										</div>
 									</div>
 								</div>
@@ -176,18 +246,32 @@
 												<div class="position-relative w-100 h-100">
 													<input id="image" class="position-absolute invisible" type="file" accept="image/*">
 
-													<a id="edit-image-add" href="" class="position-absolute top-0 start-0 w-100 h-100 d-inline-block rounded stretched-link z-3">
+													<!--<a id="edit-image-add" href="" class="position-absolute top-0 start-0 w-100 h-100 d-inline-block rounded stretched-link z-3">
 														<svg class="position-absolute top-50 start-50 translate-middle w-25 h-25 d-none" xmlns="http://www.w3.org/2000/svg" fill="var(--bs-secondary-bg)" viewBox="0 0 16 16">
 															<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
 														</svg>
+													</a>-->
+
+												<div class="image">
+													<a id="edit-image-add" href="" class="position-absolute top-0 start-0 w-100 h-100 d-inline-block rounded stretched-link z-3">
+														<svg class="position-absolute top-50 start-50 translate-middle w-25 h-25 d-none" xmlns="http://www.w3.org/2000/svg" fill="var(--bs-secondary-bg)" viewBox="0 0 16 16">
+															<path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+														</svg>
 													</a>
 
-													<svg id="edit-image-placeholder" class="img-thumbnail w-100 bg-body-tertiary" xmlns="http://www.w3.org/2000/svg" width="5" height="6" viewBox="0 0 16 16" fill="var(--bs-secondary-bg)">
+													<!--<svg id="edit-image-placeholder" class="img-thumbnail w-100 bg-body-tertiary" xmlns="http://www.w3.org/2000/svg" width="2" height="3" viewBox="0 0 16 16" fill="var(--bs-secondary-bg)">
 														<path d="M8.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
 														<path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v8l-2.083-2.083a.5.5 0 0 0-.76.063L8 11 5.835 9.7a.5.5 0 0 0-.611.076L3 12V2z" />
+													</svg>-->
+
+													<svg id="edit-image-placeholder" class="img-thumbnail w-100 bg-body-tertiary" xmlns="http://www.w3.org/2000/svg" width="2" height="3" viewBox="0 0 16 16" fill="var(--bs-secondary-bg)">
+														<path d="M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+														<path d="M4.5 0A2.5 2.5 0 0 0 2 2.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2.5A2.5 2.5 0 0 0 11.5 0h-7zM3 2.5A1.5 1.5 0 0 1 4.5 1h7A1.5 1.5 0 0 1 13 2.5v10.795a4.2 4.2 0 0 0-.776-.492C11.392 12.387 10.063 12 8 12s-3.392.387-4.224.803a4.2 4.2 0 0 0-.776.492V2.5z"/>
 													</svg>
 
 													<img id="edit-image" class="img-thumbnail w-100 bg-body-tertiary d-none" src="#" alt="">
+												</div>
+
 												</div>
 
 												<figcaption id="edit-image-details" class="figure-caption d-inline-flex mt-1 d-none"></figcaption>
@@ -227,6 +311,14 @@
 												</div>
 											</div>
 
+											<p></p>
+											<div class="alert alert-light" id="edit-tokens" role="alert">
+											<div class="float-start text-secondary"></div>
+											</div>
+
+											<!--<p></p>
+											<span id="edit-tokens" class="float-start text-secondary"></span>-->
+
 											<div id="edit-metadata-cai" class="container mt-4 p-3 border rounded d-none">
 												<div class="row text-center">
 													<h3 class="h5">CharacterAI Metadata</h3>
@@ -262,6 +354,30 @@
 										</div>
 
 										<div class="col-12 col-md-7 col-lg-8 col-xl-9">
+											<div class="alert alert-light" role="alert">
+											<!--Use <span class="badge bg-secondary">{{char}}</span> variable <b>for character's</b> identification and <span class="badge bg-secondary">{{user}}</span> for <b>user's</b>, obviously;<br>Also use asterisks <span class="badge bg-secondary">*</span> to indicate <b>inner thoughts</b> and quotation marks <span class="badge bg-secondary">""</span> for <b>direct speech</b>.
+											</div>-->
+											<li>Use <b>{{char}}</b> variable for character's identification and <b>{{user}}</b> for user's, obviously;</li>
+											<li>Also use asterisks ( <b>*</b> ) to indicate inner thoughts and quotation marks (<b>" "</b>) for direct speech;</li>
+											<li>To simplify the logic use <b>XML-markup</b>: block structure of writing according to a scheme <b>[&#60;tag&#62;</b>TEXT<b>&#60;/tag&#62;]</b>.</li>
+											<!--Use <b>{{char}}</b> variable for character's identification and <b>{{user}}</b> for user's, obviously;<br>Also use asterisks <i class="bi bi-asterisk"></i> to indicate inner thoughts and quotation marks <i class="bi bi-quote"></i> for direct speech.-->
+											</div>
+
+<ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="general-tab" data-bs-toggle="tab" data-bs-target="#general-tab-pane" type="button" role="tab" aria-controls="general-tab-pane" aria-selected="true">General</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="additional-tab" data-bs-toggle="tab" data-bs-target="#additional-tab-pane" type="button" role="tab" aria-controls="additional-tab-pane" aria-selected="false">Additional</button>
+  </li>
+  <li class="nav-item" role="presentation">
+  <button class="nav-link" id="examples-tab" data-bs-toggle="tab" data-bs-target="#examples-tab-pane" type="button" role="tab" aria-controls="examples-tab-pane" aria-selected="false">Examples</button>
+</li>
+</ul>
+
+<div class="tab-content" id="myTabContent">
+	<div class="tab-pane fade show active" id="general-tab-pane" role="tabpanel" aria-labelledby="general-tab" tabindex="0">
+
 											<form class="needs-validation" autocomplete="off" novalidate>
 												<div class="mb-3">
 													<span class="d-inline-block" tabindex="0" data-bs-toggle="popover">
@@ -269,6 +385,10 @@
 														<i class="bi bi-info-circle fs-5 text-primary"></i>
 														<ul class="list-group list-group-flush d-none">
 															<li class="list-group-item">
+																<span class="fw-semibold"><i class="bi bi-person-fill"></i> Character's name</span>
+																<p class="mb-0">The name of a character and value for {{char}} variable</p>
+															</li>
+															<!--<li class="list-group-item">
 																<span class="fw-semibold"><i class="bi bi-check text-success"></i> Pygmalion</span> &middot; Character Name
 																<p class="mb-0">The character's name</p>
 															</li>
@@ -284,7 +404,7 @@
 															<li class="list-group-item">
 																<span class="fw-semibold"><i class="bi bi-check text-success"></i> CharacterAI</span> &middot; Name
 																<p class="mb-0">This will be the name your Character uses in chat</p>
-															</li>
+															</li>-->
 														</ul>
 													</span>
 
@@ -295,11 +415,15 @@
 													</div>
 												</div>
 
-												<div class="mb-3">
+												<!--<div class="mb-3">
 													<span class="d-inline-block" tabindex="0" data-bs-toggle="popover">
-														<label for="edit-summary" class="form-label fw-semibold">Summary</label>
+														<label for="edit-summary" class="form-label fw-semibold">Description</label>
 														<i class="bi bi-info-circle fs-5 text-primary"></i>
 														<ul class="list-group list-group-flush d-none">
+															<li class="list-group-item">
+																<span class="fw-semibold"><i class="bi bi-body-text"></i> Character's description</span>
+																<p class="mb-0">The main and full description of a character; supports XML-markup.</p>
+															</li>
 															<li class="list-group-item">
 																<span class="fw-semibold"><i class="bi bi-x text-danger"></i> Pygmalion</span> &middot; <em>Not used</em>
 															</li>
@@ -320,16 +444,21 @@
 														</ul>
 													</span>
 
-													<textarea class="form-control auto-size" id="edit-summary" rows="1"></textarea>
+													<textarea class="form-control auto-size" id="edit-summary" rows="5"></textarea>
+													<textarea class="form-control auto-size" id="edit-summary" rows="4" max-rows="11"></textarea>
 													<label for="edit-summary" class="form-label float-end mt-1 small text-secondary"></label>
-												</div>
+												</div>-->
 
 												<div class="mb-3">
 													<span class="d-inline-block " tabindex="0" data-bs-toggle="popover">
-														<label for="edit-personality" class="form-label fw-semibold">Personality</label>
+														<label for="edit-personality" class="form-label fw-semibold">Description</label>
 														<i class="bi bi-info-circle fs-5 text-primary"></i>
 														<ul class="list-group list-group-flush d-none">
 															<li class="list-group-item">
+																<span class="fw-semibold"><i class="bi bi-body-text"></i> Character's description</span>
+																<p class="mb-0">The main and full description of a character</p>
+															</li>
+															<!--<li class="list-group-item">
 																<span class="fw-semibold"><i class="bi bi-check text-success"></i> Pygmalion</span> &middot; Character Persona
 																<p class="mb-0">Describe the character's persona here. Think of this as CharacterAI's description + definitions in one box.</p>
 															</li>
@@ -346,12 +475,171 @@
 															<li class="list-group-item">
 																<span class="fw-semibold"><i class="bi bi-check text-success"></i> CharacterAI</span> &middot; Long Description
 																<p class="mb-0">In a few sentences, how would your Character describe themselves?</p>
-															</li>
+															</li>-->
 														</ul>
 													</span>
 
 													<textarea class="form-control auto-size" id="edit-personality" rows="1"></textarea>
 													<label for="edit-personality" class="form-label float-end mt-1 small text-secondary"></label>
+												</div>
+
+
+
+
+
+
+													<span class="d-inline-block" tabindex="0" data-bs-toggle="popover">
+														<label for="edit-greeting" class="form-label fw-semibold">First Message</label>
+														<i class="bi bi-info-circle fs-5 text-primary"></i>
+														<ul class="list-group list-group-flush d-none">
+															<li class="list-group-item">
+																<span class="fw-semibold"><i class="bi bi-chat-fill"></i> Character's first message</span>
+																<p class="mb-0">First message from the character which shapes 90% of their behavior</p>
+															</li>
+														</ul>
+													</span>
+
+<div id="carouselExampleIndicators" class="carousel carousel-dark slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+
+													<!--<textarea class="form-control auto-size" id="edit-greeting" rows="1"></textarea>-->
+													<textarea class="form-control auto-size" id="edit-greeting" rows="5" max-rows="11"></textarea>
+													<label for="edit-greeting" class="form-label float-end mt-1 small text-secondary"></label>
+
+
+
+    </div>
+    <div class="carousel-item">
+
+												<div class="mb-3">
+
+													<!--<textarea class="form-control auto-size" id="edit-greeting" rows="1"></textarea>-->
+													<textarea class="form-control auto-size" id="alternate-greeting-1" rows="5" max-rows="11"></textarea>
+													<label for="alternate_greeting_1" class="form-label float-end mt-1 small text-secondary"></label>
+												</div>
+
+    </div>
+
+    <div class="carousel-item">
+
+												<div class="mb-3">
+
+													<!--<textarea class="form-control auto-size" id="edit-greeting" rows="1"></textarea>-->
+													<textarea class="form-control auto-size" id="alternate-greeting-2" rows="5" max-rows="11"></textarea>
+													<label for="alternate-greeting-2" class="form-label float-end mt-1 small text-secondary"></label>
+												</div>
+
+    </div>
+
+    <div class="carousel-item">
+
+												<div class="mb-3">
+
+
+													<!--<textarea class="form-control auto-size" id="edit-greeting" rows="1"></textarea>-->
+													<textarea class="form-control auto-size" id="alternate-greeting-3" rows="5" max-rows="11"></textarea>
+													<label for="alternate-greeting-3" class="form-label float-end mt-1 small text-secondary"></label>
+												</div>
+
+    </div>
+
+    <div class="carousel-item">
+
+												<div class="mb-3">
+
+
+													<!--<textarea class="form-control auto-size" id="edit-greeting" rows="1"></textarea>-->
+													<textarea class="form-control auto-size" id="alternate-greeting-4" rows="5" max-rows="11"></textarea>
+													<label for="alternate-greeting-4" class="form-label float-end mt-1 small text-secondary"></label>
+												</div>
+
+    </div>
+
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
+
+
+
+
+
+
+
+												<div class="clearfix"></div>
+												<span id="edit-tokens" class="float-end small text-secondary"></span>
+											</form>
+										</div>
+
+  <div class="tab-pane fade" id="additional-tab-pane" role="tabpanel" aria-labelledby="additional-tab" tabindex="0">
+
+
+												<div class="row">
+												<div class="col-6">
+													<span class="d-inline-block " tabindex="0" data-bs-toggle="popover">
+														<label for="edit-creator" class="form-label fw-semibold">Author</label>
+														<i class="bi bi-info-circle fs-5 text-primary"></i>
+														<ul class="list-group list-group-flush d-none">
+															<li class="list-group-item">
+																<span class="fw-semibold"><i class="bi bi-person"></i> Created by</span>
+																<p class="mb-0">Put your name here, brave coomer</p>
+															</li>
+														</ul>
+													</span>
+
+													<textarea class="form-control auto-size" id="edit-creator" rows="1"></textarea>
+													<label for="edit-creator" class="form-label float-end mt-1 small text-secondary"></label>
+												</div>
+
+												<div class="col-6">
+													<span class="d-inline-block " tabindex="0" data-bs-toggle="popover">
+														<label for="edit-comment" class="form-label fw-semibold">Comment</label>
+														<i class="bi bi-info-circle fs-5 text-primary"></i>
+														<ul class="list-group list-group-flush d-none">
+															<li class="list-group-item">
+																<span class="fw-semibold"><i class="bi bi-card-text"></i> Character's commentary</span>
+																<p class="mb-0">Shows in the character list under the name in SillyTavern</p>
+															</li>
+														</ul>
+													</span>
+
+													<textarea class="form-control auto-size" id="edit-comment" rows="1"></textarea>
+													<label for="edit-comment" class="form-label float-end mt-1 small text-secondary"></label>
+												</div>
+</div>
+
+												<div class="mb-3">
+													<span class="d-inline-block" tabindex="0" data-bs-toggle="popover">
+														<label for="edit-summary" class="form-label fw-semibold">Summary</label>
+														<i class="bi bi-info-circle fs-5 text-primary"></i>
+														<ul class="list-group list-group-flush d-none">
+															<li class="list-group-item">
+																<span class="fw-semibold"><i class="bi bi-list"></i> Personality summary</span>
+																<p class="mb-0">A brief description of the personality, e.g. «Cute, cunny, brat»</p>
+															</li>
+														</ul>
+													</span>
+
+													<textarea class="form-control auto-size" id="edit-summary" rows="4"></textarea>
+													<label for="edit-summary" class="form-label float-end mt-1 small text-secondary"></label>
 												</div>
 
 												<div class="mb-3">
@@ -360,58 +648,18 @@
 														<i class="bi bi-info-circle fs-5 text-primary"></i>
 														<ul class="list-group list-group-flush d-none">
 															<li class="list-group-item">
-																<span class="fw-semibold"><i class="bi bi-check text-success"></i> Pygmalion</span> &middot; Scenario
-																<p class="mb-0">Optionally, describe the starting scenario in a few short sentences.</p>
-															</li>
-															<li class="list-group-item">
-																<span class="fw-semibold"><i class="bi bi-check text-success"></i> Text Generation</span> &middot; Context (Scenario)
-															</li>
-															<li class="list-group-item">
-																<span class="fw-semibold"><i class="bi bi-check text-success"></i> TavernAI</span> &middot; Scenario
+																<span class="fw-semibold"><i class="bi bi-hash"></i> Default character's scenario</span>
 																<p class="mb-0">Circumstances and context of the dialogue</p>
 															</li>
-															<li class="list-group-item d-none">
-																<span class="fw-semibold"><i class="bi bi-x text-danger"></i> KoboldAI</span> &middot; <em>???</em>
-															</li>
-															<li class="list-group-item">
-																<span class="fw-semibold"><i class="bi bi-x text-danger"></i> CharacterAI</span> &middot; <em>Not used</em>
-															</li>
 														</ul>
 													</span>
 
-													<textarea class="form-control auto-size" id="edit-scenario" rows="1"></textarea>
+													<textarea class="form-control auto-size" id="edit-scenario" rows="4"></textarea>
 													<label for="edit-scenario" class="form-label float-end mt-1 small text-secondary"></label>
 												</div>
-
-												<div class="mb-3">
-													<span class="d-inline-block" tabindex="0" data-bs-toggle="popover">
-														<label for="edit-greeting" class="form-label fw-semibold">Greeting Message</label>
-														<i class="bi bi-info-circle fs-5 text-primary"></i>
-														<ul class="list-group list-group-flush d-none">
-															<li class="list-group-item">
-																<span class="fw-semibold"><i class="bi bi-check text-success"></i> Pygmalion</span> &middot; Character Greeting
-																<p class="mb-0">Write the character's greeting here. They will say this verbatim as their first response.</p>
-															</li>
-															<li class="list-group-item">
-																<span class="fw-semibold"><i class="bi bi-check text-success"></i> Text Generation</span> &middot; <em>Used but uneditable</em>
-															</li>
-															<li class="list-group-item">
-																<span class="fw-semibold"><i class="bi bi-check text-success"></i> TavernAI</span> &middot; First message
-																<p class="mb-0">First message from the character</p>
-															</li>
-															<li class="list-group-item d-none">
-																<span class="fw-semibold"><i class="bi bi-x text-danger"></i> KoboldAI</span> &middot; <em>???</em>
-															</li>
-															<li class="list-group-item">
-																<span class="fw-semibold"><i class="bi bi-check text-success"></i> CharacterAI</span> &middot; Greeting
-																<p class="mb-0">What would your Character say to start a conversation?</p>
-															</li>
-														</ul>
-													</span>
-
-													<textarea class="form-control auto-size" id="edit-greeting" rows="1"></textarea>
-													<label for="edit-greeting" class="form-label float-end mt-1 small text-secondary"></label>
 												</div>
+
+  <div class="tab-pane fade" id="examples-tab-pane" role="tabpanel" aria-labelledby="examples-tab" tabindex="0">
 
 												<div class="mb-3">
 													<span class="d-inline-block" tabindex="0" data-bs-toggle="popover">
@@ -419,39 +667,25 @@
 														<i class="bi bi-info-circle fs-5 text-primary"></i>
 														<ul class="list-group list-group-flush d-none">
 															<li class="list-group-item">
-																<span class="fw-semibold"><i class="bi bi-check text-success"></i> Pygmalion</span> &middot; Example Chat
-																<p class="mb-0">Optionally, write in an example chat here. This is useful for showing how the character should behave, for example.</p>
-															</li>
-															<li class="list-group-item">
-																<span class="fw-semibold"><i class="bi bi-check text-success"></i> Text Generation</span> &middot; <em>Used but uneditable</em>
-															</li>
-															<li class="list-group-item">
-																<span class="fw-semibold"><i class="bi bi-check text-success"></i> TavernAI</span> &middot; Examples of dialogue
-																<p class="mb-0">Forms a personality more clearly</p>
-															</li>
-															<li class="list-group-item d-none">
-																<span class="fw-semibold"><i class="bi bi-x text-danger"></i> KoboldAI</span> &middot; <em>???</em>
-															</li>
-															<li class="list-group-item">
-																<span class="fw-semibold"><i class="bi bi-check text-success"></i> CharacterAI</span> &middot; Definition
-																<p class="mb-0">Example conversations and information to define your Character</p>
+																<span class="fw-semibold"><i class="bi bi-chat-dots-fill"></i> Character's speech style</span>
+																<p class="mb-0">Describes how the character speaks; each example, should start with &lt;START&gt; tag</p>
 															</li>
 														</ul>
 													</span>
 
-													<textarea class="form-control auto-size" id="edit-examples" rows="1"></textarea>
+													<textarea class="form-control auto-size" id="edit-examples" rows="4"></textarea>
 													<label for="edit-examples" class="form-label float-end mt-1 small text-secondary"></label>
 												</div>
+	</div>
 
-												<div class="clearfix"></div>
-												<span id="edit-tokens" class="float-end small text-secondary"></span>
-											</form>
-										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+					</div>
+					</div>
+
 
 					<div class="accordion-item">
 						<h2 class="accordion-header">
@@ -461,7 +695,7 @@
 						</h2>
 
 						<div id="accordion-export" class="accordion-collapse collapse" data-bs-parent="#accordion">
-							<div class="accordion-body text-center">
+							<div class="	n-body text-center">
 								<div class="container">
 									<div class="row py-3 px-5">
 										<div id="export-image" class="col-12 col-lg border-end-0 border-end-lg border-bottom border-bottom-lg-0 pb-4 pb-lg-0 mb-4 mb-lg-0 d-none">
@@ -503,11 +737,15 @@
 		<div class="container">
 			<div class="row text-body-secondary user-select-none">
 				<div class="col">
-					<span data-bs-toggle="tooltip" data-bs-title="Get in contact on Discord for any suggestions or help!">Made with &#128166; by <code class="user-select-all">Zoltan#8287</code></span>
-				</div>
-
+					<span data-bs-toggle="tooltip" data-bs-title="Get in contact on Discord for any suggestions or help!">Made with &#128166; by <code class="user-select-all">Zoltan#8287</code>, forked by <code class="user-select-all">AVAKSon#0498</code> and modified by <code class="user-select-all">neptunebooty</code></span>
+					</div>
+					<!--Made with &#128166; by
+					<code class="user-select-all"><span data-bs-toggle="tooltip" title="Sooqa">Zoltan#8287</span></code>
+						and forked by
+					<code class="user-select-all"><span data-bs-toggle="tooltip" title="Pidor">neptunebooty</span></code>
+				</div>-->
 				<div class="col text-end">
-					Version 0.5
+					Version 0.5.3
 				</div>
 			</div>
 		</div>
@@ -561,12 +799,26 @@
 		</div>
 	</div>
 
-	<script src="https://cdn.jsdelivr.net/combine/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js,npm/crc-32@1.2,gh/syonfox/GPT-3-Encoder@c3c2e2533a15645d812b5e6fcb00b75b74718161/browser.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/combine/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/crc-32@1.2,gh/syonfox/GPT-3-Encoder@c3c2e2533a15645d812b5e6fcb00b75b74718161/browser.min.js"></script>
+	<!--<script>
+		const dropArea = document.getElementById("drop-area");
+		const inputFile = document.getElementById("input-file");
+		const imageView = document.getElementById("img-view");
+
+		inputFile.addEventListener("change", uploadlmage);
+
+		function uploadlmage(){
+			let imgLink = URL.createObjectURL(inputFi1e.fi1es[0]);
+			imageView.style.backgroundImage = `url(${imgLink})`;
+			imageView.textContent = "";
+			imageView. style. border = 0;
+	</script>-->
 	<script>
 		'use strict';
+		//fixer for the page
 
-		const APP = 'AI Character Editor';
-		const VER = '0.5.0';
+		const APP = "AICharED (Zoltan's AI Character Editor)";
+		const VER = "0.5.3";
 
 		Element.prototype.show = function () {
 			this.classList.remove('d-none');
@@ -731,7 +983,7 @@
 				return new Intl.DateTimeFormat(undefined, {
 					dateStyle: 'long',
 					timeStyle: 'medium',
-					hour12: true
+					hour12: false
 				}).format(date);
 			}
 
@@ -763,6 +1015,7 @@
 
 			static ratio(width, height) {
 				return height == 0 ? width : Format.ratio(height, width % height);
+
 			}
 
 			static capitalize(text) {
@@ -1147,9 +1400,24 @@
 					document.querySelectorAll('input[type=text], textarea').forEach(el => {
 						this.update(el);
 
-						const total = gpt3encoder.countTokens(Edit.name + Edit.summary + Edit.personality + Edit.scenario + Edit.greeting + Edit.examples);
-						document.getElementById('edit-tokens').innerText = `${total.toLocaleString()} total ${Format.pluralize(total, 'token', 'tokens')}`;
-					});
+						//const total = gpt3encoder.countTokens(Edit.name + Edit.personality + Edit.greeting + Edit.summary + Edit.scenario + Edit.examples);
+						//document.getElementById('edit-tokens').innerText = `${total.toLocaleString()} total ${Format.pluralize(total, 'token', 'tokens')}`;
+
+						const total = gpt3encoder.countTokens(Edit.name + Edit.personality + Edit.greeting + Edit.summary + Edit.scenario + Edit.examples);
+						const name_token = gpt3encoder.countTokens(Edit.name);
+						const personality_token = gpt3encoder.countTokens(Edit.personality);
+						const greeting_token = gpt3encoder.countTokens(Edit.greeting);
+						const summary_token = gpt3encoder.countTokens(Edit.summary);
+						const scenario_token = gpt3encoder.countTokens(Edit.scenario);
+						const examples_token = gpt3encoder.countTokens(Edit.examples);
+						document.getElementById('edit-tokens').innerText = `${total.toLocaleString()} ${Format.pluralize(total, 'token', 'tokens')} total:
+						• ${name_token.toLocaleString()} in name,
+						• ${personality_token.toLocaleString()} in personality,
+						• ${greeting_token.toLocaleString()} in the first message,
+						• ${summary_token.toLocaleString()} in summary,
+						• ${scenario_token.toLocaleString()} in scenario,
+						• ${examples_token.toLocaleString()} in examples.`;
+			});
 
 					return;
 				}
@@ -1165,8 +1433,20 @@
 
 				nextSibling.innerText = `${str.length.toLocaleString()} ${Format.pluralize(str.length, 'character', 'characters')}, ${tokens.toLocaleString()} ${Format.pluralize(tokens, 'token', 'tokens')}`;
 
-				const total = gpt3encoder.countTokens(Edit.name + Edit.summary + Edit.personality + Edit.scenario + Edit.greeting + Edit.examples);
-				document.getElementById('edit-tokens').innerText = `${total.toLocaleString()} total ${Format.pluralize(total, 'token', 'tokens')}`;
+						const total = gpt3encoder.countTokens(Edit.name + Edit.personality + Edit.greeting + Edit.summary + Edit.scenario + Edit.examples);
+						const name_token = gpt3encoder.countTokens(Edit.name);
+						const personality_token = gpt3encoder.countTokens(Edit.personality);
+						const greeting_token = gpt3encoder.countTokens(Edit.greeting);
+						const summary_token = gpt3encoder.countTokens(Edit.summary);
+						const scenario_token = gpt3encoder.countTokens(Edit.scenario);
+						const examples_token = gpt3encoder.countTokens(Edit.examples);
+						document.getElementById('edit-tokens').innerText = `${total.toLocaleString()} ${Format.pluralize(total, 'token', 'tokens')} total:
+						• ${name_token.toLocaleString()} in name,
+						• ${personality_token.toLocaleString()} in personality,
+						• ${greeting_token.toLocaleString()} in the first message
+						• ${summary_token.toLocaleString()} in summary,
+						• ${scenario_token.toLocaleString()} in scenario,
+						• ${examples_token.toLocaleString()} in examples`;
 			}
 
 			constructor() {
@@ -1193,7 +1473,7 @@
 				const style = getComputedStyle(el, null);
 
 				el.style.height = parseInt(style['fontSize']) + 'px';
-				el.style.height = (parseInt(el.scrollHeight) + (parseInt(style['borderTopWidth']) + parseInt(style['borderBottomWidth']) || 0)) + 'px';
+				el.style.height = (parseInt(el.scrollHeight) + (parseInt(style['borderTopWidth']) + parseInt(style['borderBottomWidth']) || 100)) + 'px';
 			}
 
 			constructor() {
@@ -1274,49 +1554,66 @@
 
 		class Character {
 			#name;
-			#summary;
 			#personality;
-			#scenario;
 			#greeting;
+			#alternate_greetings;
+			#summary;
+			#scenario;
 			#examples;
+			#creator;
+			#comment;
 
 			get name() {
 				return this.#name;
-			}
-
-			get summary() {
-				return this.#summary;
 			}
 
 			get personality() {
 				return this.#personality;
 			}
 
-			get scenario() {
-				return this.#scenario;
-			}
-
 			get greeting() {
 				return this.#greeting;
+			}
+
+			get summary() {
+				return this.#summary;
+			}
+
+			get scenario() {
+				return this.#scenario;
 			}
 
 			get examples() {
 				return this.#examples;
 			}
 
+			get creator() {
+				return this.#creator;
+			}
+
+			get comment() {
+				return this.#comment;
+			}
+
 			get tokens() {
-				return Tokenizer.count(this.name + this.summary + this.personality + this.scenario + this.greeting + this.examples);
+				return Tokenizer.count(this.name + this.personality + this.greeting + this.summary + this.scenario);
 			}
 
 			#valid(object, key) {
 				if (!object || !object.hasOwnProperty(key) || !object[key] || !object[key].trim()) return false;
-
 				return true;
 			}
+
+			#valid_array(object, key) {
+				if (!object || !object.hasOwnProperty(key) || !Array.isArray(object[key]) || !object[key].length) return false;
+				return true; }
 
 			#sanitize(object, key) {
 				return this.#valid(object, key) ? object[key].trim() : null;
 			}
+
+			#sanitize_array(object, key) {
+				if (!object || !object.hasOwnProperty(key) || !object[key] || !Array.isArray(object[key]) || !object[key].length) return null; return object[key].map((value) => value.trim()); }
 
 			constructor(json) {
 				if (!json) return;
@@ -1325,35 +1622,52 @@
 
 				// Text Generation
 				if (this.#valid(json, 'char_name')) this.#name = this.#sanitize(json, 'char_name');
-				if (this.#valid(json, 'char_persona')) this.#personality = this.#sanitize(json, 'char_persona');
-				if (this.#valid(json, 'world_scenario')) this.#scenario = this.#sanitize(json, 'world_scenario');
 				if (this.#valid(json, 'char_greeting')) this.#greeting = this.#sanitize(json, 'char_greeting');
-				if (this.#valid(json, 'example_dialogue')) this.#examples = this.#sanitize(json, 'example_dialogue');
 
 				// TavernAI
-				if (this.#valid(json, 'name')) this.#name = this.#sanitize(json, 'name');
-				if (this.#valid(json, 'personality')) this.#summary = this.#sanitize(json, 'personality');
-				if (this.#valid(json, 'description')) this.#personality = this.#sanitize(json, 'description');
-				if (this.#valid(json, 'scenario')) this.#scenario = this.#sanitize(json, 'scenario');
-				if (this.#valid(json, 'first_mes')) this.#greeting = this.#sanitize(json, 'first_mes');
-				if (this.#valid(json, 'mes_example')) this.#examples = this.#sanitize(json, 'mes_example');
+				//if (this.#valid(json, 'name')) this.#name = this.#sanitize(json, 'name');
+				//if (this.#valid(json, 'description')) this.#personality = this.#sanitize(json, 'description');
+				//if (this.#valid(json, 'first_mes')) this.#greeting = this.#sanitize(json, 'first_mes');
+				//if (this.#valid(json, 'personality')) this.#summary = this.#sanitize(json, 'personality');
+				//if (this.#valid(json, 'scenario')) this.#scenario = this.#sanitize(json, 'scenario');
+				//if (this.#valid(json, 'mes_example')) this.#examples = this.#sanitize(json, 'mes_example');
+				//if (this.#valid(json, 'creator')) this.#creator = this.#sanitize(json, 'creator');
+				//if (this.#valid(json, 'creator_notes')) this.#comment = this.#sanitize(json, 'creator_notes');
+
+
+				// TavernAI
+				if (this.#valid(json.data, 'name')) this.#name = this.#sanitize(json.data, 'name');
+				if (this.#valid(json.data, 'description')) this.#personality = this.#sanitize(json.data, 'description');
+				if (this.#valid(json.data, 'first_mes')) this.#greeting = this.#sanitize(json.data, 'first_mes');
+        if (this.#valid_array(json.data, 'alternate_greetings')) {
+            const alternateGreetings = this.#sanitize_array(json.data, 'alternate_greetings');
+            if (Array.isArray(alternateGreetings)) {
+                const alternateGreetingFields = ['alternate-greeting-1', 'alternate-greeting-2', 'alternate-greeting-3'];
+                for (let i = 0; i < alternateGreetingFields.length; i++) {
+                    if (i < alternateGreetings.length) {
+                        document.getElementById(alternateGreetingFields[i]).value = alternateGreetings[i];
+                    }
+                }
+            }
+        };
+				if (this.#valid(json.data, 'personality')) this.#summary = this.#sanitize(json.data, 'personality');
+				if (this.#valid(json.data, 'scenario')) this.#scenario = this.#sanitize(json.data, 'scenario');
+				if (this.#valid(json.data, 'mes_example')) this.#examples = this.#sanitize(json.data, 'mes_example');
+				if (this.#valid(json.data, 'creator')) this.#creator = this.#sanitize(json.data, 'creator');
+				if (this.#valid(json.data, 'creator_notes')) this.#comment = this.#sanitize(json.data, 'creator_notes');
 
 				// CIA Character
 				if (json.character) {
 					if (this.#valid(json.character, 'name')) this.#name = this.#sanitize(json.character, 'name');
-					if (this.#valid(json.character, 'title')) this.#summary = this.#sanitize(json.character, 'title');
-					if (this.#valid(json.character, 'description')) this.#personality = this.#sanitize(json.character, 'description');
+					if (this.#valid(json.character, 'title')) this.#personality = this.#sanitize(json.character, 'title');
 					if (this.#valid(json.character, 'greeting')) this.#greeting = this.#sanitize(json.character, 'greeting');
-					if (this.#valid(json.character, 'definition')) this.#examples = this.#sanitize(json.character, 'definition');
 				}
 
 				// CIA History
 				if (json.info && json.info.character) {
 					if (this.#valid(json.info.character, 'name')) this.#name = this.#sanitize(json.info.character, 'name');
-					if (this.#valid(json.info.character, 'title')) this.#summary = this.#sanitize(json.info.character, 'title');
-					if (this.#valid(json.info.character, 'description')) this.#personality = this.#sanitize(json.info.character, 'description');
+					if (this.#valid(json.info.character, 'title')) this.#personality = this.#sanitize(json.info.character, 'title');
 					if (this.#valid(json.info.character, 'greeting')) this.#greeting = this.#sanitize(json.info.character, 'greeting');
-					if (this.#valid(json.info.character, 'definition')) this.#examples = this.#sanitize(json.info.character, 'definition');
 				}
 			}
 		}
@@ -1393,8 +1707,9 @@
 			#detectFormats(json) {
 				const checkProperties = (properties, obj = json) => properties.every(p => obj.hasOwnProperty(p));
 
-				if (checkProperties(['char_name', 'char_persona', 'world_scenario', 'char_greeting', 'example_dialogue'])) this.formats.push(JsonFormats.TextGenerationCharacter);
-				if (checkProperties(['name', 'description', 'personality', 'scenario', 'first_mes', 'mes_example'])) this.formats.push(JsonFormats.TavernCharacter);
+				if (checkProperties(['char_name', 'char_persona', 'char_greeting'])) this.formats.push(JsonFormats.TextGenerationCharacter);
+				//if (checkProperties(['name', 'description', 'first_mes'])) this.formats.push(JsonFormats.TavernCharacter);
+				if (checkProperties(['data'])) this.formats.push(JsonFormats.TavernCharacter);
 				if (json.character && checkProperties(['name', 'title', 'description', 'greeting', 'definition'], json.character)) this.formats.push(JsonFormats.CaiCharacter);
 				if (json.info && json.info.character && checkProperties(['name', 'title', 'description', 'greeting'], json.info.character)) this.formats.push(JsonFormats.CaiHistory);
 			}
@@ -1429,6 +1744,7 @@
 			#accordionElement = document.getElementById('accordion-load');
 			#loadButtonElement = document.getElementById('load');
 			#createButtonElement = document.getElementById('create');
+			#restoreButtonElement = document.getElementById('restore');
 
 			#dragStart() {
 				this.#accordionElement.classList.add('bg-drag');
@@ -1439,6 +1755,7 @@
 			}
 
 			#create() {
+				Edit.saveDataInLocalStorage();		// Localstorage saving your current work when you create new character (by AliCat)
 				this.dispatchEvent(new CustomEvent('create'));
 			}
 
@@ -1448,6 +1765,10 @@
 						file
 					}
 				}));
+			}
+
+			#restore() {
+				this.dispatchEvent(new CustomEvent('restore'));
 			}
 
 			constructor() {
@@ -1498,6 +1819,11 @@
 
 					this.#load(e.target.files[0]);
 				});
+
+				// Restore character button
+				this.#restoreButtonElement.addEventListener('click', () => {
+					this.#restore();
+				});
 			}
 		}
 
@@ -1511,11 +1837,13 @@
 			static #imageDetailsElement = document.getElementById('edit-image-details');
 
 			static #nameElement = document.getElementById('edit-name');
-			static #summaryElement = document.getElementById('edit-summary');
 			static #personalityElement = document.getElementById('edit-personality');
-			static #scenarioElement = document.getElementById('edit-scenario');
 			static #greetingElement = document.getElementById('edit-greeting');
+			static #summaryElement = document.getElementById('edit-summary');
+			static #scenarioElement = document.getElementById('edit-scenario');
 			static #examplesElement = document.getElementById('edit-examples');
+			static #creatorElement = document.getElementById('edit-creator');
+			static #commentElement = document.getElementById('edit-comment');
 
 			static #originalContainerElement = document.getElementById('edit-original');
 			static #originalNameElement = document.getElementById('edit-original-name');
@@ -1535,24 +1863,32 @@
 				return this.#nameElement.value.trim();
 			}
 
-			static get summary() {
-				return this.#summaryElement.value.trim();
-			}
-
 			static get personality() {
 				return this.#personalityElement.value.trim();
-			}
-
-			static get scenario() {
-				return this.#scenarioElement.value.trim();
 			}
 
 			static get greeting() {
 				return this.#greetingElement.value.trim();
 			}
 
+			static get summary() {
+				return this.#summaryElement.value.trim();
+			}
+
+			static get scenario() {
+				return this.#scenarioElement.value.trim();
+			}
+
 			static get examples() {
 				return this.#examplesElement.value.trim();
+			}
+
+			static get creator() {
+				return this.#creatorElement.value.trim();
+			}
+
+			static get comment() {
+				return this.#commentElement.value.trim();
 			}
 
 			static #reset() {
@@ -1608,6 +1944,125 @@
 				document.getElementById('export-image').show(); // Show export image option
 			}
 
+			// Localstorage implementation
+			static saveDataInLocalStorage() {
+				const data = {
+					name: Edit.name,
+					personality: Edit.personality,
+					greeting: Edit.greeting,
+					summary: Edit.summary,
+					scenario: Edit.scenario,
+					examples: Edit.examples,
+					creator: Edit.creator,
+					comment: Edit.comment,
+				};
+				const dataString = JSON.stringify(data);
+				localStorage.setItem('editData', dataString);
+
+				const image = document.getElementById('edit-image');	// image save
+				image.src = document.getElementById('edit-image').src;
+
+				// Convert the image to a data URL
+				const canvas = document.createElement('canvas');
+				const context = canvas.getContext('2d');
+				canvas.width = image.naturalWidth;
+				canvas.height = image.naturalHeight;
+				context.drawImage(image, 0, 0);
+				const dataURL = canvas.toDataURL(); // This will contain the image data in base64 format
+				// Save the data URL to localStorage
+				localStorage.setItem('imageData', dataURL);
+
+				console.log(this.#originalModifiedElement.getAttribute('datetime'));
+
+																	// Localstorage metadata save
+				const metadata = {
+					name: this.#originalNameElement.textContent,
+					format: this.#originalFormatElement.textContent,
+					tokens: this.#originalTokensElement.textContent,
+					size: this.#originalSizeElement.textContent,
+					modified: this.#originalModifiedElement.getAttribute('datetime'),
+					width: image.naturalWidth,
+					height: image.naturalHeight,
+
+
+					// name: image.file.name,
+					//
+					// format: image.formats.join('<br>'),
+					//
+					// tokens: `${image.character.tokens.toLocaleString()} total`,
+					//
+					// size: Format.bytes(image.file.size),
+					//
+					// modified: Format.ago(image.file.lastModified),
+
+				};
+				const metadataString = JSON.stringify(metadata);
+				localStorage.setItem('metaData', metadataString);
+
+				console.log(metadata);
+
+
+
+
+
+				// const reader = new FileReader();
+				// reader.addEventListener('load', () => {
+				// 	// Save the Base64 encoded image data to LocalStorage
+				// 	localStorage.setItem('imageData', reader.result);
+				// 	//image.src = reader.result;
+				// });
+
+
+				//reader.readAsDataURL(source.file);
+			}
+
+			static loadDataFromLocalStorage() {
+				const dataString = localStorage.getItem('editData');
+				const metaData = localStorage.getItem('metaData');
+				const imageData = localStorage.getItem('imageData');
+				const imageInput = document.getElementById('edit-image');
+
+				if (dataString) {
+					const data = JSON.parse(dataString);
+					Edit.#nameElement.value = data.name;
+					Edit.#personalityElement.value = data.personality;
+					Edit.#greetingElement.value = data.greeting;
+					Edit.#summaryElement.value = data.summary;
+					Edit.#scenarioElement.value = data.scenario;
+					Edit.#examplesElement.value = data.examples;
+					Edit.#creatorElement.value = data.creator;
+					Edit.#commentElement.value = data.comment;
+				}
+				if (imageData) {
+					Edit.#imagePlaceholderElement.hide();
+					imageInput.src = imageData;
+					Edit.#imageElement.show();
+					document.getElementById('export-image').show();
+
+					//this.#showImage(imageData)
+				}
+
+
+				if (metaData) {
+					const data = JSON.parse(metaData);
+					Edit.#originalNameElement.innerText = data.name;
+
+					Edit.#originalFormatElement.innerHTML = data.format;
+
+					Edit.#originalTokensElement.innerText = data.tokens;
+
+					Edit.#originalSizeElement.innerText = data.size;
+
+					Edit.#originalModifiedElement.innerText = data.modified;
+
+					const ar = Format.ratio(data.width, data.height);
+					Edit.#imageDetailsElement.innerText = `${data.width} x ${data.height}px (${data.width / ar}:${data.height / ar})`;
+
+					Edit.#imageDetailsElement.show();
+					Edit.#originalContainerElement.show();
+				}
+			}
+
 			load(source) {
 				Edit.#reset();
 
@@ -1616,7 +2071,9 @@
 					Edit.#caiWarningElement.show();
 				}
 
-				if (source.image) Edit.#showImage(source.image, source.file.name);
+				if (source.image) {
+					Edit.#showImage(source.image, source.file.name);
+				}
 
 				if (source.file) {
 					Edit.#originalNameElement.innerText = source.file.name;
@@ -1626,6 +2083,8 @@
 					Edit.#originalTokensElement.innerText = `${source.character.tokens.toLocaleString()} total`;
 
 					Edit.#originalSizeElement.innerText = Format.bytes(source.file.size);
+
+					console.log(source.file.lastModified);
 
 					Edit.#originalModifiedElement.innerText = Format.ago(source.file.lastModified);
 					Edit.#originalModifiedElement.setAttribute('datetime', new Date(source.file.lastModified).toISOString());
@@ -1675,11 +2134,13 @@
 				}
 
 				Edit.#nameElement.value = source.character.name || '';
-				Edit.#summaryElement.value = source.character.summary || '';
 				Edit.#personalityElement.value = source.character.personality || '';
-				Edit.#scenarioElement.value = source.character.scenario || '';
 				Edit.#greetingElement.value = source.character.greeting || '';
-				Edit.#examplesElement.value = source.character.examples || '';
+				Edit.#summaryElement.value = source.character.summary || '';
+				Edit.#scenarioElement.value = source.character.scenario || '';
+				Edit.#examplesElement.value = source.character.examples || '<START>';
+				Edit.#creatorElement.value = source.character.creator || '';
+				Edit.#commentElement.value = source.character.comment || '';
 
 				Accordions.lock(false);
 				Accordions.edit.show();
@@ -1739,6 +2200,18 @@
 
 					Edit.#showImage(Edit.#convertImage(image), e.target.files[0].name);
 				});
+
+				// Localstorage saving on closing the window
+				window.addEventListener('beforeunload', (e) => {
+					Edit.saveDataInLocalStorage();
+				});
+
+				// old update version
+				// this.element_id.forEach(id => {
+				// 	document.getElementById(id).addEventListener('change', (e) => {
+				// 		Edit.saveDataInLocalStorage();
+				// 	});
+				// });
 			}
 		}
 
@@ -1769,22 +2242,97 @@
 
 			static Gradio() {
 				return {
-					char_name: document.getElementById('edit-name').value.trim() || '',
-					char_persona: document.getElementById('edit-personality').value.trim() || '',
-					world_scenario: document.getElementById('edit-scenario').value.trim() || '',
-					char_greeting: document.getElementById('edit-greeting').value.trim() || '',
-					example_dialogue: document.getElementById('edit-examples').value.trim() || ''
+//					char_name: document.getElementById('edit-name').value.trim() || '',
+//					char_greeting: document.getElementById('edit-greeting').value.trim() || '',
 				};
 			}
 
+//			static Tavern() {
+//				const messages = document.getElementById('edit-greeting'); document.getElementById('alternate-greeting-1'); document.getElementById('alternate-greeting-2'); document.getElementById('//alternate-greeting-3');
+//				const fm = document.getElementById('edit-greeting');
+//				const fm1 = document.getElementById('alternate-greeting-1');
+//				const fm2 = document.getElementById('alternate-greeting-2');
+//				const fm3 = document.getElementById('alternate-greeting-3');
+//
+//				var array = []; // создаем пустой массив
+//				array.push (document.getElementById ("alternate-greeting-1").value); // добавляем значение из первого textarea
+//				array.push (document.getElementById ("alternate-greeting-2").value); // добавляем значение из второго textarea
+//				array.push (document.getElementById ("alternate-greeting-3").value); // добавляем значение из третьего textarea
+//
+//				return {
+//					name: document.getElementById('edit-name').value.trim() || '',
+//					description: document.getElementById('edit-personality').value.trim() || '',
+//					first_mes: document.getElementById('edit-greeting').value.trim() || '',
+//					alternate_greetings: array,
+//					personality: document.getElementById('edit-summary').value.trim() || '',
+//					scenario: document.getElementById('edit-scenario').value.trim() || '',
+//					mes_example: document.getElementById('edit-examples').value.trim() || '',
+//					creator: document.getElementById('edit-creator').value.trim() || '',
+//					creator_notes: document.getElementById('edit-comment').value.trim() || '',
+//				};
+//			}
+
+//			static #metadata = {
+//				metadata: {
+//					version: 1,
+//					created: Date.now(),
+//					modified: Date.now(),
+//					source: null,
+//					tool: {
+//						name: APP,
+//						version: VER,
+//						url: 'https://zoltanai.github.io/character-editor/'
+//					}
+//				}
+//			};
+
+
 			static Tavern() {
+//				const messages = document.getElementById('edit-greeting'); document.getElementById('alternate-greeting-1'); document.getElementById('alternate-greeting-2'); document.getElementById('//alternate-greeting-3');
+//				const fm = document.getElementById('edit-greeting');
+//				const fm1 = document.getElementById('alternate-greeting-1');
+//				const fm2 = document.getElementById('alternate-greeting-2');
+//				const fm3 = document.getElementById('alternate-greeting-3');
+
+//				var array = []; // создаем пустой массив
+//					array.push (document.getElementById ("alternate-greeting-1").value); // добавляем значение из первого textarea
+//					array.push (document.getElementById ("alternate-greeting-2").value); // добавляем значение из второго textarea
+//					array.push (document.getElementById ("alternate-greeting-3").value); // добавляем значение из третьего textarea
+
+					var array = [
+					  document.getElementById("alternate-greeting-1").value,
+					  document.getElementById("alternate-greeting-2").value,
+					  document.getElementById("alternate-greeting-3").value,
+					  document.getElementById("alternate-greeting-4").value
+					].filter(function(value) {
+					  return value !== "";
+					});
+
+
+			//#detectFormats(json) {
+			//	const checkProperties = (properties, obj = json) => properties.every(p => obj.hasOwnProperty(p));
+//
+			//	if (checkProperties(['char_name', 'char_persona', 'char_greeting'])) this.formats.push(JsonFormats.TextGenerationCharacter);
+			//	if (checkProperties(['name', 'description', 'first_mes'])) this.formats.push(JsonFormats.TavernCharacter);
+			//	if (json.character && checkProperties(['name', 'title', 'description', 'greeting', 'definition'], json.character)) this.formats.push(JsonFormats.CaiCharacter);
+			//	if (json.info && json.info.character && checkProperties(['name', 'title', 'description', 'greeting'], json.info.character)) this.formats.push(JsonFormats.CaiHistory);
+			//}
+
+
 				return {
-					name: document.getElementById('edit-name').value.trim() || '',
-					description: document.getElementById('edit-personality').value.trim() || '',
-					personality: document.getElementById('edit-summary').value.trim() || '',
-					scenario: document.getElementById('edit-scenario').value.trim() || '',
-					first_mes: document.getElementById('edit-greeting').value.trim() || '',
-					mes_example: document.getElementById('edit-examples').value.trim() || ''
+					spec:"chara_card_v2",
+					spec_version:"2.0",
+					data: {
+						name: document.getElementById('edit-name').value.trim() || '',
+						description: document.getElementById('edit-personality').value.trim() || '',
+						first_mes: document.getElementById('edit-greeting').value.trim() || '',
+						alternate_greetings: array,
+						personality: document.getElementById('edit-summary').value.trim() || '',
+						scenario: document.getElementById('edit-scenario').value.trim() || '',
+						mes_example: document.getElementById('edit-examples').value.trim() || '',
+						creator: document.getElementById('edit-creator').value.trim() || '',
+						creator_notes: document.getElementById('edit-comment').value.trim() || '',
+					}
 				};
 			}
 
@@ -1813,7 +2361,8 @@
 
 				const png = Png.Generate(await blob.arrayBuffer(), json);
 
-				const file = new File([png], (data.char_name || data.name || 'character') + '.card.png', { type: 'image/png' });
+				//const file = new File([png], (data.char_name || data.name || 'character') + '.card.png', { type: 'image/png' });
+				const file = new File([png], (data.char_name || data.name || 'character') + '_card.png', { type: 'image/png' });
 
 				Exporter.#downloadFile(file);
 			}
@@ -1910,7 +2459,41 @@
 					}
 				}
 			});
+
+			// Restore character
+			load.addEventListener('restore', () => {
+				edit.load(new Source());
+				Edit.loadDataFromLocalStorage();
+				TextareaAutoSize.update();
+				Tokenizer.update();
+			});
 		})();
 	</script>
+
+<!--<script src="auto-resize-textarea.js"></script>
+<script>
+	autoResizeTextarea(document.querySelectorAll("textarea.auto-resize"), { maxHeight: 640 })
+</script>
+<script src="upload.js"></script>
+
+<script>
+window.onload = (event) => {
+    var toastLiveExample = document.getElementById('toast')
+    var toast = new bootstrap.Toast(toastLiveExample)
+    toast.show()
+}
+</script>-->
+
+<script>
+$('a[data-toggle="tab"]').on('shown.bs.tab', function (evt) {
+  var anchor = $(evt.target).attr('href');
+  alert("TAB SHOWN = "+anchor);
+  // take action based on what tab was shown
+  if (anchor === "#some_special_tab_anchor") {
+    // do my special thing :)
+  }
+});
+</script>
+
 </body>
 </html>
