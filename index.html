@@ -1636,9 +1636,9 @@
 
 
 				// TavernAI
-				if (this.#valid(json.data, 'name')) this.#name = this.#sanitize(json.data, 'name');
-				if (this.#valid(json.data, 'description')) this.#personality = this.#sanitize(json.data, 'description');
-				if (this.#valid(json.data, 'first_mes')) this.#greeting = this.#sanitize(json.data, 'first_mes');
+				if (this.#valid(json.data, 'name') || this.#valid(json, 'name')) this.#name = this.#sanitize(json.data, 'name') || this.#sanitize(json, 'name');
+				if (this.#valid(json.data, 'description') || this.#valid(json, 'description')) this.#personality = this.#sanitize(json.data, 'description') || this.#sanitize(json, 'description');
+				if (this.#valid(json.data, 'first_mes') || this.#valid(json, 'first_mes')) this.#greeting = this.#sanitize(json.data, 'first_mes') || this.#sanitize(json, 'first_mes');
         if (this.#valid_array(json.data, 'alternate_greetings')) {
             const alternateGreetings = this.#sanitize_array(json.data, 'alternate_greetings');
             if (Array.isArray(alternateGreetings)) {
@@ -1650,9 +1650,9 @@
                 }
             }
         };
-				if (this.#valid(json.data, 'personality')) this.#summary = this.#sanitize(json.data, 'personality');
-				if (this.#valid(json.data, 'scenario')) this.#scenario = this.#sanitize(json.data, 'scenario');
-				if (this.#valid(json.data, 'mes_example')) this.#examples = this.#sanitize(json.data, 'mes_example');
+				if (this.#valid(json.data, 'personality') || this.#valid(json, 'personality')) this.#summary = this.#sanitize(json.data, 'personality') || this.#sanitize(json, 'personality');
+				if (this.#valid(json.data, 'scenario') || this.#valid(json, 'scenario')) this.#scenario = this.#sanitize(json.data, 'scenario') || this.#sanitize(json, 'scenario');
+				if (this.#valid(json.data, 'mes_example') || this.#valid(json, 'mes_example')) this.#examples = this.#sanitize(json.data, 'mes_example') || this.#sanitize(json, 'mes_example');
 				if (this.#valid(json.data, 'creator')) this.#creator = this.#sanitize(json.data, 'creator');
 				if (this.#valid(json.data, 'creator_notes')) this.#comment = this.#sanitize(json.data, 'creator_notes');
 
@@ -1709,7 +1709,7 @@
 
 				if (checkProperties(['char_name', 'char_persona', 'char_greeting'])) this.formats.push(JsonFormats.TextGenerationCharacter);
 				//if (checkProperties(['name', 'description', 'first_mes'])) this.formats.push(JsonFormats.TavernCharacter);
-				if (checkProperties(['data'])) this.formats.push(JsonFormats.TavernCharacter);
+				if (checkProperties(['data']) || (['name'])) this.formats.push(JsonFormats.TavernCharacter);
 				if (json.character && checkProperties(['name', 'title', 'description', 'greeting', 'definition'], json.character)) this.formats.push(JsonFormats.CaiCharacter);
 				if (json.info && json.info.character && checkProperties(['name', 'title', 'description', 'greeting'], json.info.character)) this.formats.push(JsonFormats.CaiHistory);
 			}
